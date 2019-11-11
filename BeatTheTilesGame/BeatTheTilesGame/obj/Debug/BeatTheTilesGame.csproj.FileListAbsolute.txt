@@ -1,0 +1,17 @@
+C:\Users\Ross Brown\Engineering45\Week3\Friday\BeatTheTilesGame\BeatTheTilesGame\obj\Debug\BeatTheTilesGame.csprojAssemblyReference.cache
+C:\Users\Ross Brown\Engineering45\Week3\Friday\BeatTheTilesGame\BeatTheTilesGame\obj\Debug\BeatTheTilesGame.HardGame.resources
+C:\Users\Ross Brown\Engineering45\Week3\Friday\BeatTheTilesGame\BeatTheTilesGame\obj\Debug\BeatTheTilesGame.StartGame.resources
+C:\Users\Ross Brown\Engineering45\Week3\Friday\BeatTheTilesGame\BeatTheTilesGame\obj\Debug\BeatTheTilesGame.DifficultySelect.resources
+C:\Users\Ross Brown\Engineering45\Week3\Friday\BeatTheTilesGame\BeatTheTilesGame\obj\Debug\BeatTheTilesGame.EasyGame.resources
+C:\Users\Ross Brown\Engineering45\Week3\Friday\BeatTheTilesGame\BeatTheTilesGame\obj\Debug\BeatTheTilesGame.Properties.Resources.resources
+C:\Users\Ross Brown\Engineering45\Week3\Friday\BeatTheTilesGame\BeatTheTilesGame\obj\Debug\BeatTheTilesGame.csproj.GenerateResource.cache
+C:\Users\Ross Brown\Engineering45\Week3\Friday\BeatTheTilesGame\BeatTheTilesGame\obj\Debug\BeatTheTilesGame.csproj.CoreCompileInputs.cache
+C:\Users\Ross Brown\Engineering45\Week3\Friday\BeatTheTilesGame\BeatTheTilesGame\bin\Debug\BeatTheTilesGame.exe.config
+C:\Users\Ross Brown\Engineering45\Week3\Friday\BeatTheTilesGame\BeatTheTilesGame\bin\Debug\BeatTheTilesGame.exe
+C:\Users\Ross Brown\Engineering45\Week3\Friday\BeatTheTilesGame\BeatTheTilesGame\bin\Debug\BeatTheTilesGame.pdb
+C:\Users\Ross Brown\Engineering45\Week3\Friday\BeatTheTilesGame\BeatTheTilesGame\obj\Debug\BeatTheTilesGame.exe
+C:\Users\Ross Brown\Engineering45\Week3\Friday\BeatTheTilesGame\BeatTheTilesGame\obj\Debug\BeatTheTilesGame.pdb
+C:\Users\Ross Brown\Engineering45\Week3\Friday\BeatTheTilesGame\BeatTheTilesGame\obj\Debug\BeatTheTilesGame.GameOver.resources
+C:\Users\Ross Brown\Engineering45\Week3\Friday\BeatTheTilesGame\BeatTheTilesGame\obj\Debug\BeatTheTilesGame.WinGame.resources
+C:\Users\Ross Brown\Engineering45\Week3\Friday\BeatTheTilesGame\BeatTheTilesGame\obj\Debug\BeatTheTilesGame.sideScroller.resources
+C:\Users\Ross Brown\Engineering45\Week3\Friday\BeatTheTilesGame\BeatTheTilesGame\obj\Debug\BeatTheTilesGame.MainGame.resources
