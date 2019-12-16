@@ -19,9 +19,8 @@ namespace BeatTheTilesGame
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            StartGame sg = new StartGame();
-            sg.Show();
-            this.Hide();
+            Application.OpenForms["StartGame"].Show();            
+            this.Close();
         }
     }
 }

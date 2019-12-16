@@ -2,7 +2,7 @@
 
 namespace BeatTheTilesGame
 {
-    partial class HardGame
+    partial class BossLevel
     {
         /// <summary>
         /// Required designer variable.
@@ -42,6 +42,8 @@ namespace BeatTheTilesGame
             this.health1 = new System.Windows.Forms.PictureBox();
             this.health3 = new System.Windows.Forms.PictureBox();
             this.health2 = new System.Windows.Forms.PictureBox();
+            this.enemyTimer = new System.Windows.Forms.Timer(this.components);
+            this.rightEdge = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.platform)).BeginInit();
@@ -51,6 +53,7 @@ namespace BeatTheTilesGame
             ((System.ComponentModel.ISupportInitialize)(this.health1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.health3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.health2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightEdge)).BeginInit();
             this.SuspendLayout();
             // 
             // gameTimer
@@ -98,7 +101,7 @@ namespace BeatTheTilesGame
             this.enemy.Size = new System.Drawing.Size(200, 200);
             this.enemy.TabIndex = 3;
             this.enemy.TabStop = false;
-            this.enemy.Tag = "enemy";
+            this.enemy.Tag = "";
             // 
             // enemyHitbox
             // 
@@ -161,11 +164,27 @@ namespace BeatTheTilesGame
             this.health2.TabStop = false;
             this.health2.Tag = "health2";
             // 
-            // HardGame
+            // enemyTimer
+            // 
+            this.enemyTimer.Enabled = true;
+            this.enemyTimer.Interval = 1000;
+            this.enemyTimer.Tick += new System.EventHandler(this.enemyGameTimer);
+            // 
+            // rightEdge
+            // 
+            this.rightEdge.Location = new System.Drawing.Point(782, 0);
+            this.rightEdge.Name = "rightEdge";
+            this.rightEdge.Size = new System.Drawing.Size(0, 402);
+            this.rightEdge.TabIndex = 28;
+            this.rightEdge.TabStop = false;
+            this.rightEdge.Tag = "rightEdge";
+            // 
+            // BossLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 403);
+            this.Controls.Add(this.rightEdge);
             this.Controls.Add(this.health2);
             this.Controls.Add(this.health3);
             this.Controls.Add(this.health1);
@@ -176,8 +195,8 @@ namespace BeatTheTilesGame
             this.Controls.Add(this.platform);
             this.Controls.Add(this.player);
             this.Controls.Add(this.background);
-            this.Name = "HardGame";
-            this.Text = "Hard Game";
+            this.Name = "BossLevel";
+            this.Text = "Boss Level";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyIsUp);
             ((System.ComponentModel.ISupportInitialize)(this.background)).EndInit();
@@ -189,6 +208,7 @@ namespace BeatTheTilesGame
             ((System.ComponentModel.ISupportInitialize)(this.health1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.health3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.health2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightEdge)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,7 +227,7 @@ namespace BeatTheTilesGame
         private System.Windows.Forms.PictureBox health1;
         private System.Windows.Forms.PictureBox health3;
         private System.Windows.Forms.PictureBox health2;
-
-        
+        private Timer enemyTimer;
+        private PictureBox rightEdge;
     }
 }

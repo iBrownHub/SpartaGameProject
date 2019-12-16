@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace BeatTheTilesGame
 {
-    public partial class HardGame : Form
+    public partial class BossLevel : Form, IMkProjectile, IMkEnemy
     {
         bool isLeft = false;
         bool isRight = false;
@@ -24,11 +24,11 @@ namespace BeatTheTilesGame
         int speed = 5;
         int projSpeed = 8;
         public int playerHealth = 3;
-        int enemyHealth = 30;
+        int enemyHealth = 50;
 
         
 
-        public HardGame()
+        public BossLevel()
         {
             InitializeComponent();
         }
@@ -94,10 +94,20 @@ namespace BeatTheTilesGame
                         player.Left = 0;
                     }
                 }
+                if (i is PictureBox && (string)i.Tag == "rightEdge")
+                {
+                    if (player.Bounds.IntersectsWith(i.Bounds))
+                    {
+                        player.Left = rightEdge.Left - player.Width;
+                    }
+                }
                 if (i is PictureBox && (string)i.Tag == "enemy")
                 {
+                    i.Left -= 2;
                     if (player.Bounds.IntersectsWith(i.Bounds) && hasDamaged == false)
                     {
+                        this.Controls.Remove((PictureBox)i);
+                        ((PictureBox)i).Dispose();
                         hasDamaged = true;
                         --playerHealth;
                         switch (playerHealth)
@@ -105,7 +115,7 @@ namespace BeatTheTilesGame
                             case 0:
                                 GameOver go = new GameOver();
                                 go.Show();
-                                this.Hide();
+                                this.Close();
                                 break;
                             case 1:
                                 health2.BackColor = Color.Black;
@@ -118,6 +128,37 @@ namespace BeatTheTilesGame
                         }
                     }
                     if (!(player.Bounds.IntersectsWith(i.Bounds)))                    
+                    {
+                        hasDamaged = false;
+                    }
+                }
+                if (i is PictureBox && (string)i.Tag == "enemyTop")
+                {
+                    i.Top += 2;
+                    if (player.Bounds.IntersectsWith(i.Bounds) && hasDamaged == false)
+                    {
+                        this.Controls.Remove((PictureBox)i);
+                        ((PictureBox)i).Dispose();
+                        hasDamaged = true;
+                        --playerHealth;
+                        switch (playerHealth)
+                        {
+                            case 0:
+                                GameOver go = new GameOver();
+                                go.Show();
+                                this.Close();
+                                break;
+                            case 1:
+                                health2.BackColor = Color.Black;
+                                break;
+                            case 2:
+                                health3.BackColor = Color.Black;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    if (!(player.Bounds.IntersectsWith(i.Bounds)))
                     {
                         hasDamaged = false;
                     }
@@ -139,8 +180,7 @@ namespace BeatTheTilesGame
                         {
                             --enemyHealth;
                             this.Controls.Remove(j);
-                            j.Dispose();
-                            
+                            j.Dispose();                            
                         }
                     }
                 }
@@ -201,9 +241,7 @@ namespace BeatTheTilesGame
             }
         }
         public void MkProjectile()
-        {
-            Trace.WriteLine("MkProjectile Method");
-            Trace.WriteLine(enemyHealth);
+        {            
             PictureBox proj = new PictureBox();
             proj.BackColor = Color.DarkOrange;
             proj.Height = 10;
@@ -213,6 +251,57 @@ namespace BeatTheTilesGame
             proj.Top = player.Top + (player.Height / 2);
             this.Controls.Add(proj);
             proj.BringToFront();
+        }
+        public void MkEnemy(int x, int y)
+        {            
+            Random rand = new Random();
+            switch (rand.Next(1,4))
+            {
+                case 1:
+                    PictureBox enemy = new PictureBox();
+                    enemy.BackColor = Color.Gold;
+                    enemy.Size = new Size(20, 20);
+                    //enemy.Height = 30;
+                    //enemy.Width = 30;
+                    enemy.Tag = "enemy";
+                    enemy.Left = 800;
+                    enemy.Top = platform.Top - enemy.Height;
+                    this.Controls.Add(enemy);
+                    enemy.BringToFront();                    
+                    break;
+                case 2:
+                    PictureBox enemy2 = new PictureBox();
+                    enemy2.BackColor = Color.Gold;
+                    enemy2.Size = new Size(20, 20);
+                    //enemy.Height = 30;
+                    //enemy.Width = 30;
+                    enemy2.Tag = "enemy";
+                    enemy2.Left = 800;
+                    enemy2.Top = platform.Top - enemy2.Height - 30;
+                    this.Controls.Add(enemy2);
+                    enemy2.BringToFront();
+                    break;
+                case 3:
+                    PictureBox enemy3 = new PictureBox();
+                    enemy3.BackColor = Color.Gold;
+                    enemy3.Size = new Size(20, 20);
+                    //enemy.Height = 30;
+                    //enemy.Width = 30;
+                    enemy3.Tag = "enemyTop";
+                    enemy3.Left = player.Left;
+                    enemy3.Top = 0;
+                    this.Controls.Add(enemy3);
+                    enemy3.BringToFront();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void enemyGameTimer(object sender, EventArgs e)
+        {
+            MkEnemy(1, 1);
+
         }
     }
 }

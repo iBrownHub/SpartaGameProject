@@ -23,15 +23,15 @@ namespace BeatTheTilesGame
             difficulty = btn.Text;
             switch (difficulty)
             {
-                case "Easy":
+                case "Instructions":
                     EasyGame eg = new EasyGame();
                     eg.Show();
-                    this.Hide();
+                    this.Close();
                     break;
                 case "Hard":
                     MainGame mg = new MainGame();
                     mg.Show();
-                    this.Hide();
+                    this.Close();
                     break;
             }
         }

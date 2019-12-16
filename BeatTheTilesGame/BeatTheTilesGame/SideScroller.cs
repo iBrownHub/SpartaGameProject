@@ -11,8 +11,9 @@ using System.Windows.Forms;
 
 namespace BeatTheTilesGame
 {
-    public partial class SideScroller : Form
-    {
+    public partial class SideScroller : Form, IMkEnemy
+    {   
+        public static List<PictureBox> enemies = new List<PictureBox>();
         bool isLeft = false;
         bool isRight = false;
         bool isJumping = false;
@@ -22,35 +23,77 @@ namespace BeatTheTilesGame
         int jumpSpeed = 10;
         int jumpForce = 10;
         int speed = 5;
-        int backSpeed = 8;
+        int backSpeed = 5;
         public SideScroller()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            MkEnemy(17,1);
+        }
+
+        public void MkEnemy(int x, int y)
+        {
+            int oldX = initEnemy.Left;
+                        
+            for (int i = 1; i < x; ++i)
+            {
+                if ((i % 2) == 0)
+                {                    
+                    PictureBox enemy = new PictureBox();
+                    enemy.BackColor = Color.Gold;
+                    enemy.Height = 28;
+                    enemy.Width = 12;
+                    enemy.Tag = "enemy";
+                    enemy.Name = ("enemy" + i);
+                    enemy.Left = oldX + 200;
+                    enemy.Top = initEnemy.Top;
+                    this.Controls.Add(enemy);
+                    enemy.BringToFront();
+                    oldX = enemy.Left;
+                    enemies.Add(enemy);
+                }
+                else
+                {                    
+                    PictureBox enemy = new PictureBox();
+                    enemy.BackColor = Color.Gold;
+                    enemy.Height = 28;
+                    enemy.Width = 12;
+                    enemy.Tag = "enemy";
+                    enemy.Name = ("enemy" + i);
+                    enemy.Left = oldX + 200;
+                    enemy.Top = initEnemy.Top - 25;
+                    this.Controls.Add(enemy);
+                    enemy.BringToFront();
+                    oldX = enemy.Left;
+                    enemies.Add(enemy);
+                }
+            }            
         }
 
         private void sideScrollerTick(object sender, EventArgs e)
         {
             player.Top += jumpSpeed;
-            player.Refresh();
-            HardGame hg = new HardGame();
+            player.Refresh();            
 
             if (isJumping && jumpForce < 0)
             {
                 isJumping = false;
             }
+
             if (isJumping)
             {
-                jumpSpeed = -10;
+                jumpSpeed = -12;
                 jumpForce -= 1;
             }
             else
             {
-                jumpSpeed = 10;
+                jumpSpeed = 12;
             }
+
             if (isLeft)
             {
                 player.Left -= speed;
             }
+
             if (isRight)
             {
                 player.Left += speed;
@@ -65,21 +108,23 @@ namespace BeatTheTilesGame
                 Size size = new Size(50, 50);
                 player.Size = size;
             }
+
             foreach (Control i in this.Controls)
-            {
+            {                
                 if (i is PictureBox && (string)i.Tag == "background")
                 {
-                    i.Left -= 8;
+                    i.Left -= backSpeed;
                 }
                 if (i is PictureBox && (string)i.Tag == "platform")
                 {
                     if (player.Bounds.IntersectsWith(i.Bounds))
                     {
-                        jumpForce = 10;
+                        jumpForce = 8;
                         player.Top = i.Top - player.Height;
                         jumpSpeed = 0;
                     }
                 }
+
                 if (i is PictureBox && (string)i.Tag == "leftEdge")
                 {
                     if (player.Bounds.IntersectsWith(i.Bounds))
@@ -87,6 +132,7 @@ namespace BeatTheTilesGame
                         player.Left = 0;
                     }
                 }
+
                 if (i is PictureBox && (string)i.Tag == "rightEdge")
                 {
                     if (player.Bounds.IntersectsWith(i.Bounds))
@@ -94,18 +140,22 @@ namespace BeatTheTilesGame
                         player.Left = rightEdge.Left - player.Width;
                     }
                 }
+
                 if (i is PictureBox && (string)i.Tag == "enemy")
                 {
-                    i.Left -= 5;
+                    i.Left -= backSpeed;
+
                     if (player.Bounds.IntersectsWith(i.Bounds) && hasDamaged == false)
                     {
                         hasDamaged = true;                        
-                        --scrollerHealth;                        
+                        scrollerHealth--;
+                        i.Left = player.Left - i.Width;                        
                         switch (scrollerHealth)
                         {
                             case 0:
                                 GameOver go = new GameOver();
                                 go.Show();
+                                Application.OpenForms["MainGame"].Close();
                                 this.Close();
                                 break;
                             case 1:
@@ -116,7 +166,7 @@ namespace BeatTheTilesGame
                                 break;
                             default:
                                 break;
-                        }
+                        }                        
                     }
                     if (!player.Bounds.IntersectsWith(i.Bounds))
                     {
@@ -125,15 +175,14 @@ namespace BeatTheTilesGame
                 }
                 foreach (Control j in this.Controls)
                 {
-                    if ((j is PictureBox && (string)j.Tag == "background") && (i is PictureBox && (string)i.Tag == "rightEdge"))
+                    if ((j is PictureBox && (string)j.Tag == "background") && (i is PictureBox && (string)i.Tag == "rightFinish"))
                     {
                         if (!(i.Bounds.IntersectsWith(j.Bounds)))
                         {
-                            MainGame mg = new MainGame();
-                            mg.Show();
+                            Application.OpenForms["MainGame"].Show();
                             this.Close();
                         }
-                    }
+                    }                    
                 }
             }
         }

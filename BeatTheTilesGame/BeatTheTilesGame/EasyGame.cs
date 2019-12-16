@@ -16,5 +16,12 @@ namespace BeatTheTilesGame
         {
             InitializeComponent();
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            DifficultySelect ds = new DifficultySelect();
+            ds.Show();
+            this.Close();
+        }
     }
 }

@@ -35,19 +35,19 @@
             // 
             // easyButton
             // 
-            this.easyButton.Location = new System.Drawing.Point(160, 200);
+            this.easyButton.Location = new System.Drawing.Point(350, 250);
             this.easyButton.Name = "easyButton";
-            this.easyButton.Size = new System.Drawing.Size(80, 23);
+            this.easyButton.Size = new System.Drawing.Size(100, 25);
             this.easyButton.TabIndex = 0;
-            this.easyButton.Text = "Easy";
+            this.easyButton.Text = "Instructions";
             this.easyButton.UseVisualStyleBackColor = true;
             this.easyButton.Click += new System.EventHandler(this.DifficultyButtonClick);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(560, 200);
+            this.button2.Location = new System.Drawing.Point(360, 200);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(80, 25);
             this.button2.TabIndex = 1;
             this.button2.Text = "Hard";
             this.button2.UseVisualStyleBackColor = true;

@@ -1,0 +1,17 @@
+C:\Users\Ross Brown\Engineering45\Week3\Friday\SpartaGameProject\BeatTheTilesGame\BeatTheTilesGame\bin\Release\BeatTheTilesGame.exe.config
+C:\Users\Ross Brown\Engineering45\Week3\Friday\SpartaGameProject\BeatTheTilesGame\BeatTheTilesGame\bin\Release\BeatTheTilesGame.exe
+C:\Users\Ross Brown\Engineering45\Week3\Friday\SpartaGameProject\BeatTheTilesGame\BeatTheTilesGame\bin\Release\BeatTheTilesGame.pdb
+C:\Users\Ross Brown\Engineering45\Week3\Friday\SpartaGameProject\BeatTheTilesGame\BeatTheTilesGame\obj\Release\BeatTheTilesGame.GameOver.resources
+C:\Users\Ross Brown\Engineering45\Week3\Friday\SpartaGameProject\BeatTheTilesGame\BeatTheTilesGame\obj\Release\BeatTheTilesGame.BossLevel.resources
+C:\Users\Ross Brown\Engineering45\Week3\Friday\SpartaGameProject\BeatTheTilesGame\BeatTheTilesGame\obj\Release\BeatTheTilesGame.MainGame.resources
+C:\Users\Ross Brown\Engineering45\Week3\Friday\SpartaGameProject\BeatTheTilesGame\BeatTheTilesGame\obj\Release\BeatTheTilesGame.SideScroller.resources
+C:\Users\Ross Brown\Engineering45\Week3\Friday\SpartaGameProject\BeatTheTilesGame\BeatTheTilesGame\obj\Release\BeatTheTilesGame.StartGame.resources
+C:\Users\Ross Brown\Engineering45\Week3\Friday\SpartaGameProject\BeatTheTilesGame\BeatTheTilesGame\obj\Release\BeatTheTilesGame.DifficultySelect.resources
+C:\Users\Ross Brown\Engineering45\Week3\Friday\SpartaGameProject\BeatTheTilesGame\BeatTheTilesGame\obj\Release\BeatTheTilesGame.EasyGame.resources
+C:\Users\Ross Brown\Engineering45\Week3\Friday\SpartaGameProject\BeatTheTilesGame\BeatTheTilesGame\obj\Release\BeatTheTilesGame.Properties.Resources.resources
+C:\Users\Ross Brown\Engineering45\Week3\Friday\SpartaGameProject\BeatTheTilesGame\BeatTheTilesGame\obj\Release\BeatTheTilesGame.TopDown.resources
+C:\Users\Ross Brown\Engineering45\Week3\Friday\SpartaGameProject\BeatTheTilesGame\BeatTheTilesGame\obj\Release\BeatTheTilesGame.WinGame.resources
+C:\Users\Ross Brown\Engineering45\Week3\Friday\SpartaGameProject\BeatTheTilesGame\BeatTheTilesGame\obj\Release\BeatTheTilesGame.csproj.GenerateResource.cache
+C:\Users\Ross Brown\Engineering45\Week3\Friday\SpartaGameProject\BeatTheTilesGame\BeatTheTilesGame\obj\Release\BeatTheTilesGame.exe
+C:\Users\Ross Brown\Engineering45\Week3\Friday\SpartaGameProject\BeatTheTilesGame\BeatTheTilesGame\obj\Release\BeatTheTilesGame.pdb
+C:\Users\Ross Brown\Engineering45\Week3\Friday\SpartaGameProject\BeatTheTilesGame\BeatTheTilesGame\obj\Release\BeatTheTilesGame.csprojAssemblyReference.cache
